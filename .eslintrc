@@ -2,10 +2,14 @@
   "env": {
     "node": true,
     "browser": true,
-    "es6": true
+    "es6": true,
+    "commonjs": true
   },
   "ecmaFeatures": {
     "blockBindings": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
   },
   "globals": {
 
