@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import '../sass/main.scss';
 
 import { withConfig, ConfigLoader } from '../../src';
 
@@ -23,7 +24,12 @@ const ConnectedConfigTest = withConfig(state => state)(props => (
 const App = () => (
   <ConfigLoader fetch={fetchConfigs}>{config => (
     <div className="app-wrapper">
-      <pre>{JSON.stringify(config, null, 2)}</pre>
+      <header>
+        <h1>React Config Loader</h1>
+      </header>
+      <div className="configs">
+        <pre>{JSON.stringify(config, null, 2)}</pre>
+      </div>
     </div>
   )}</ConfigLoader>
 );

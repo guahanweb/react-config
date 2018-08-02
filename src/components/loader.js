@@ -1,5 +1,9 @@
 import React, { Component, createContext } from "react";
 
+/**
+ * Use React's context to bubble up configuration
+ * through a Provider.
+ */
 const Context = createContext({
   config: null,
   loading: false
@@ -7,6 +11,11 @@ const Context = createContext({
 
 const { Provider, Consumer } = Context;
 
+/**
+ * ConfigLoader component is responsible for the heavy
+ * lifting. We will leverage this in a sink component
+ * for Redux connected projects.
+ */
 class ConfigLoader extends Component {
   constructor(props) {
     super(props);
@@ -58,6 +67,11 @@ class ConfigLoader extends Component {
   }
 }
 
+/**
+ * We will provide a basic connector that supports Redux styls
+ * mapStateToProps and exposes all configuration loaded into 
+ * the Context.
+ */
 const withConfig = mapStateToProps => {
   return BaseComponent => props => {
     return (
@@ -71,4 +85,5 @@ const withConfig = mapStateToProps => {
   };
 };
 
+// connector and loader
 export { withConfig, ConfigLoader }
