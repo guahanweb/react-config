@@ -1,0 +1,17 @@
+{
+  "title": "Example 01",
+  "description": "This example is built with the standard URI retrieval",
+  "author": {
+    "name": "Garth Henson"
+  },
+  "list": [{
+    "id": 1,
+    "name": "first item"
+  }, {
+    "id": 2,
+    "name": "second item"
+  }, {
+    "id": 3,
+    "name": "third item"
+  }]
+}

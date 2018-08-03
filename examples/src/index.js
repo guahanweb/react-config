@@ -15,6 +15,14 @@ function fetchConfigs() {
   });
 }
 
+const Loader = () => (
+  <div className="loader">
+    <div className="wrapper">
+      <i className="fa fa-spinner fa-spin"></i>
+    </div>
+  </div>
+);
+
 const ConnectedConfigTest = withConfig(state => state)(props => (
   <div className="config-test">
     <pre className="dump">{JSON.stringify(props, null, 2)}</pre>
@@ -27,9 +35,11 @@ const App = () => (
       <header>
         <h1>React Config Loader</h1>
       </header>
-      <div className="configs">
-        <pre>{JSON.stringify(config, null, 2)}</pre>
-      </div>
+      {config.loading ? <Loader/> : (
+        <div className="configs">
+          <pre>{JSON.stringify(config, null, 2)}</pre>
+        </div>
+      )}
     </div>
   )}</ConfigLoader>
 );
